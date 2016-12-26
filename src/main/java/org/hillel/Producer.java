@@ -31,7 +31,12 @@ public class Producer extends Thread{
                     socket.close();
                     break;
                 }else{
-                    listener.newMessage(msg);
+                    try {
+                        listener.newMessage(msg);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        break;
+                    }
                 }
             }
 

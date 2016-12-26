@@ -5,5 +5,5 @@ package org.hillel.net;
  */
 public interface MessageListener {
 
-    void newMessage(String text);
+    void newMessage(String text) throws InterruptedException;
 }
